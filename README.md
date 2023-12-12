@@ -1,6 +1,6 @@
 # Fake Data Generator
 
-![GitHub](https://img.shields.io/github/license/thealexcesar/fake-data-generator)
+[![GitHub](https://img.shields.io/github/license/thealexcesar/fake-data-generator)](https://github.com/thealexcesar/fake-data-generator/blob/main/LICENSE)
 
 Release 0.0.2
 ## Overview
@@ -106,3 +106,28 @@ docker run -it fake ruby src/app.rb <type> [quantity optional(default 1)]
         # => +----------------------------------------------------------------------+
         # => 3 items of fake data have been generated
     ```
+
+---
+
+## Contribution
+
+Feel free to contribute! Open issues, submit pull requests, or suggest improvements.
+While we are working on providing detailed guidelines for contributors.
+
+### How to Contribute
+
+We welcome contributions from the community. If you're interested in contributing, please follow these general steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and ensure tests pass.
+4. Submit a pull request.
+
+## Dependencies
+
+- Faker
+- clipboard
+
+## Ruby Version
+
+3.2.2
