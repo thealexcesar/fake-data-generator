@@ -51,6 +51,7 @@ phone numbers, and more. It uses the Faker gem to create realistic-looking data 
 
 ```bash
 docker pull thealexcesar/fake-data-generator:0.0.2
+docker run -it thealexcesar/fake-data-generator:0.0.2 ruby src/app.rb <type> [quantity optional(default 1)]
 ```
 
 *or clone this repository*
