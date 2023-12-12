@@ -34,8 +34,9 @@ phone numbers, and more. It uses the Faker gem to create realistic-looking data 
 1. Setup and create an alias automated
     ```bash
     url="git@github.com:thealexcesar/fake-data-generator.git"
+    git clone $url
     repo_name=$(echo "$url" | awk -F/ '{print substr($NF, 1, length($NF)-4)}')
-    git clone $repo_name && cd $repo_name && zsh
+    cd $repo_name && zsh
     setup.sh
     ```
 
