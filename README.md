@@ -1,8 +1,8 @@
 # Fake Data Generator
 
 ![GitHub](https://img.shields.io/github/license/thealexcesar/fake-data-generator)
-[![Release](https://img.shields.io/github/release/thealexcesar/fake-data-generator?label=Release&color=green&style=flat)](https://github.com/thealexcesar/fake-data-generator/releases)
 
+Release 0.0.2
 ## Overview
 
 Fake Data Generator is a simple Ruby application that generates fake data for various types such as names, emails,
@@ -11,15 +11,17 @@ phone numbers, and more. It uses the Faker gem to create realistic-looking data 
 ## Features
 
 - Generate fake data for different types:
-  - p (paragraph),
-  - w (word),
-  - m (email),
-  - n (name),
-  - p (phone_number),
-  - i (valid),
-  - p (cpf),
-  - p (cnpj)
-  - we will have more soon
+    - `p` (paragraph),
+    - `w` (word),
+    - `m` (email),
+    - `n` (name),
+    - `p` (phone_number),
+    - `i` (valid),
+    - `p` (cpf),
+    - `p` (cnpj)
+  
+    - will have more soon
+
 
 - Copy generated data to the clipboard for easy use.
 
@@ -36,28 +38,30 @@ phone numbers, and more. It uses the Faker gem to create realistic-looking data 
     cd $repo_name
     zsh setup.sh
     ```
-> Note: In the last line, switch `zsh setup.sh` to `bash setup.sh` if you are using that shell.
+
+#### Note: In the last line, switch `zsh setup.sh` to `bash setup.sh` if you are using that shell.
+
 2. Running
+
     ```bash
     fake <type> [quantity optional(default 1)]
     ```
 
 ### Using Docker
 
-    ```bash
-    latest_release=$(curl -s https://api.github.com/repos/thealexcesar/fake-data-generator/releases/latest | jq -r .tag_name)
-    docker pull thealexcesar/fake-data-generator:$latest_release
-    ```
+```bash
+docker pull thealexcesar/fake-data-generator:0.0.2
+```
 
-or
+*or clone this repository*
 
-    ```bash
-    git clone git@github.com:thealexcesar/fake-data-generator.git && cd fake-data-generator
-    
-    docker build -t fake .
-    docker run -it fake ruby src/app.rb <type> [quantity optional(default 1)]
-    # Ex: docker run -it fake ruby src/app.rb n
-    ```
+```bash
+git clone git@github.com:thealexcesar/fake-data-generator.git && cd fake-data-generator
+
+docker build -t fake .
+docker run -it fake ruby src/app.rb <type> [quantity optional(default 1)]
+# Ex: docker run -it fake ruby src/app.rb n
+```
 
 ### Manual Installation
 
@@ -85,11 +89,11 @@ or
     fake p 3
     ```
 
-2. Without Alias: 
+2. Without Alias:
     ```bash
    ruby src/app.rb p 3                                           # In project path.
     ```
-   
+
 3. Returns
     ```bash
          fake p 3            
