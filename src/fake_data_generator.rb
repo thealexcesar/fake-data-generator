@@ -3,14 +3,13 @@ require 'clipboard'
 
 class FakeDataGenerator
   attr_reader :docs_url
-  # -------------------------------------------------------------------------------------
+  # -----------------------------------------------------------------------------------------
   def initialize
-    @docs_url = "\n\nSee Documentation: https://github.com/thealexcesar/fake"
+    @docs_url = "\n\nVisit Documentation: https://github.com/thealexcesar/fake-data-generator"
   end
-  # -------------------------------------------------------------------------------------
+  # -----------------------------------------------------------------------------------------
   def generate_fake_data(type, quantity)
     data = []
-
     type = type.downcase
 
     types = {
@@ -33,9 +32,9 @@ class FakeDataGenerator
         quantity.times { data << Faker::Internet.email }
       when 'phone_number'
         data << "#{Faker::Number.number(digits: 2)}99#{Faker::Number.number(digits: 7)}"
-      when 'pf'
+      when 'cpf'
         quantity.times { data << Faker::IDNumber.brazilian_citizen_number }
-      when 'pj'
+      when 'cnpj'
         quantity.times { data << Faker::Company.brazilian_company_number }
       when 'name'
         quantity.times { data << Faker::Name.name }
@@ -55,7 +54,7 @@ class FakeDataGenerator
   end
 
   private
-  # -------------------------------------------------------------------------------------
+  # -----------------------------------------------------------------------------------------
   def display_data(data)
     if data.empty?
       puts 'No data generated.'
@@ -76,9 +75,9 @@ class FakeDataGenerator
     Clipboard.copy(formatted_text)
     puts "#{data.length} items of fake data have been generated"
   end
-  # -------------------------------------------------------------------------------------
+  # -----------------------------------------------------------------------------------------
   def display_invalid_type_message(types)
-    valid_types = types.keys.join(', ')
-    puts "Invalid data type specified.\nValid types: #{valid_types}.#{@docs_url}"
+    valid_types = types.map { |key, value| "#{key} -> (#{value})" }.join("\n")
+    puts "\nUse Valid Types:\n----------------\n#{valid_types}\n----------------#{@docs_url}"
   end
 end
